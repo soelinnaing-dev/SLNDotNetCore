@@ -28,17 +28,18 @@ namespace SLNDotNetCore.MiniPizzaOrderSystem
         internal static Pizza pizzaInfo { get; set; }
         internal static Extra extraInfo { get; set; }
 
-        private static double getTotalPrice (Pizza pizza,Extra extra)
-        {          
-            if(isAddExtra)
+        internal double getTotalPrice (Pizza pizza,params Extra[]extras)
+        {
+            double totalPrice = pizza.pizzaPrice;
+
+            if (isAddExtra && extras != null)
             {
-                pizza.pizzaName = pizzaInfo.pizzaName;
-                pizza.pizzaPrice = pizzaInfo.pizzaPrice;
-                extra.extraName = extraInfo.extraName;
-                extra.extraPrice = extraInfo.extraPrice;               
+                foreach (var extra in extras)
+                {
+                    totalPrice += extra.extraPrice;
+                }
             }
-            return default;
+            return totalPrice;
         }
-    }
-    
+    }  
 }
