@@ -58,18 +58,22 @@ namespace SLNDotNetCore.Winform
             {
                 BlogModel mode = new BlogModel()
                 {
-                    BlogTitle = txtTitle.Text,
-                    BlogAuthor = txtAuthor.Text,
-                    BlogContent = txtContent.Text
+                    BlogTitle = txtTitle.Text.Trim(),
+                    BlogAuthor = txtAuthor.Text.Trim(),
+                    BlogContent = txtContent.Text.Trim()
                 };
                 int result = _dapperService.Execute(Queries.Queries.createQuery, mode);
                 string message = result > 0 ? "Create Successful!" : "Create Failed!";
-                MessageBox.Show(message);
-                ControlClear();
+                var messageBoxIcon = result > 0 ? MessageBoxIcon.Information : MessageBoxIcon.Error;
+                MessageBox.Show(message,"Result",MessageBoxButtons.OK,messageBoxIcon);
+                if(result>0)
+                {
+                    ControlClear();
+                }              
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 
