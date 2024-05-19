@@ -23,6 +23,7 @@ namespace SLNDotNetCore.ConsoleApp.EFCore
 
             Console.WriteLine("EFCore Example Finished\r\n");
         }
+
         private void Read()
         {
             var list = AppDbContex.Blogs.ToList();
@@ -34,12 +35,14 @@ namespace SLNDotNetCore.ConsoleApp.EFCore
                 Console.WriteLine("BlogContent is => " + item.BlogContent + "\r\n*******************");
             }
         }
+
         private void Edit(int id)
         {
             var item = AppDbContex.Blogs.FirstOrDefault(x => x.BlogId == id);
             string message = item is null ? "Item Not Found" : $"Searched Item is {item.BlogId}\r\n{item.BlogTitle}\r\n{item.BlogAuthor}\r\n{item.BlogContent}";
             Console.WriteLine(message + "\r\n");
         }
+
         private void Update(int id, string title, string author, string content)
         {
             var item = AppDbContex.Blogs.FirstOrDefault(x => x.BlogId == id);
@@ -53,6 +56,7 @@ namespace SLNDotNetCore.ConsoleApp.EFCore
             string message = result > 0 ? "Update Successful" : "Update Failed";
             Console.WriteLine(message + "\r\n");
         }
+
         private void Create(string title, string author, string content)
         {
             var item = new BlogDto
@@ -66,6 +70,7 @@ namespace SLNDotNetCore.ConsoleApp.EFCore
             string message = result > 0 ? "Creating Successful!" : "Creating Failed!";
             Console.WriteLine(message + "\r\n");
         }
+
         private void Delete(int id)
         {
             var item = AppDbContex.Blogs.FirstOrDefault(x => x.BlogId == id);
