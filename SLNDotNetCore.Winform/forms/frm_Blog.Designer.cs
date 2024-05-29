@@ -1,6 +1,6 @@
 ﻿namespace SLNDotNetCore.Winform
 {
-    partial class Home
+    partial class frm_Blog
     {
         /// <summary>
         ///  Required designer variable.
@@ -108,17 +108,24 @@
             // 
             // btnSave
             // 
+            btnSave.BackColor = Color.ForestGreen;
             btnSave.Enabled = false;
+            btnSave.FlatAppearance.BorderColor = Color.White;
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.ForeColor = Color.White;
             btnSave.Location = new Point(249, 235);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 23);
             btnSave.TabIndex = 4;
             btnSave.Text = "&Save";
-            btnSave.UseVisualStyleBackColor = true;
+            btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
             // 
             // pnlControl
             // 
+            pnlControl.BackColor = SystemColors.ActiveBorder;
+            pnlControl.BorderStyle = BorderStyle.Fixed3D;
             pnlControl.Controls.Add(txtTitle);
             pnlControl.Controls.Add(btnSave);
             pnlControl.Controls.Add(label1);
@@ -132,15 +139,16 @@
             pnlControl.Size = new Size(429, 312);
             pnlControl.TabIndex = 6;
             // 
-            // Home
+            // frm_Blog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(pnlControl);
             MinimumSize = new Size(816, 489);
-            Name = "Home";
+            Name = "frm_Blog";
             ShowIcon = false;
+            ShowInTaskbar = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Home";
             pnlControl.ResumeLayout(false);

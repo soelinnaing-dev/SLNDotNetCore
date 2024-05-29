@@ -5,11 +5,11 @@ using SLNDotNetCore.Winform.Queries;
 
 namespace SLNDotNetCore.Winform
 {
-    public partial class Home : Form
+    public partial class frm_Blog : Form
     {
         private readonly DapperService _dapperService;
 
-        public Home()
+        public frm_Blog()
         {
             InitializeComponent();
             _dapperService = new DapperService(ConnectionStrings.ConnectoinStrings._constringbuilder.ConnectionString);
@@ -47,8 +47,8 @@ namespace SLNDotNetCore.Winform
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            bool isHavevalue = Validation.IsValueValid(pnlControl);
-            if (!isHavevalue)
+            bool isHaveValue = Validation.IsValueValid(pnlControl);
+            if (!isHaveValue)
             {
                 string message = "Please input data!";
                 MessageBox.Show(message);
