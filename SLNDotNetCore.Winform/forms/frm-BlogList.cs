@@ -25,7 +25,33 @@ namespace SLNDotNetCore.Winform.forms
         private void frm_BlogList_Load(object sender, EventArgs e)
         {
             List<BlogModel> lst = _dapperservice.Query<BlogModel>(Queries.Queries.readQuery);
-            dataGridView1.DataSource  = lst;
+            dataGridView1.DataSource = lst;
+        }
+
+        private void DeleteBlog(int id)
+        {
+            string query = @"DELETE FROM [dbo].[Tbl_Blog]
+            WHERE BlogId = @BlogId";
+           int result = _dapperservice.Execute(query, new {BlogId = id});
+            string message = result > 0 ? "Delete Successfully!" : "Delete Failed!";
+            MessageBox.Show(message);
+            frm_BlogList_Load(this,EventArgs.Empty);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.ColumnIndex ==(int)EnumControlType.Edit)
+            {
+
+            }
+            else if(e.ColumnIndex ==(int)EnumControlType.Delete)
+            {
+                var dialogResult = MessageBox.Show("Are you sure want to delet?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                if(dialogResult != DialogResult.Yes)return;
+
+                int blogId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["colid"].Value);
+                DeleteBlog(blogId);
+            }
         }
     }
 }

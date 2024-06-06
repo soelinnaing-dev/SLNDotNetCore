@@ -20,7 +20,7 @@ namespace SLNDotNetCore.Shared
         {
             using IDbConnection dbCon = new SqlConnection(_connectionString);
             var result = dbCon.Query<T>(query, param).FirstOrDefault();
-            return result;
+            return result!;
         }
         public int Execute(string query, object? param = null)
         {

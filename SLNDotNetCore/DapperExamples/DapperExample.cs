@@ -24,6 +24,7 @@ namespace SLNDotNetCore.ConsoleApp.Dapper
             Create("Dapper Create Title", "Dapper Create Author", "Dapper Create Content");
 
         }
+
         private void Read()
         {
             using IDbConnection con = new SqlConnection(constring._constringbuilder.ConnectionString);
@@ -36,6 +37,7 @@ namespace SLNDotNetCore.ConsoleApp.Dapper
                 Console.WriteLine("BlogContent is => " + blog.BlogContent + "\r\n*******************");
             }
         }
+
         private void Edit(int id)
         {
             using IDbConnection con = new SqlConnection(constring._constringbuilder.ConnectionString);
@@ -43,6 +45,7 @@ namespace SLNDotNetCore.ConsoleApp.Dapper
             string message = item is null ? "Item Not Found" : $"Searched Item is {item.BlogId}\r\n{item.BlogTitle}\r\n{item.BlogAuthor}\r\n{item.BlogContent}";
             Console.WriteLine(message);
         }
+
         private void Update(int id, string title, string author, string content)
         {
             var item = new BlogDto
@@ -64,6 +67,7 @@ namespace SLNDotNetCore.ConsoleApp.Dapper
             string message = result > 0 ? "Update Successful" : "Update Failed";
             Console.WriteLine(message + "\r\n");
         }
+
         private void Create(string title, string author, string content)
         {
             var item = new BlogDto
@@ -85,6 +89,7 @@ namespace SLNDotNetCore.ConsoleApp.Dapper
             string message = result > 0 ? "Creating Successful!" : "Creating Failed!";
             Console.WriteLine(message + "\r\n");
         }
+
         private void Delete(int id)
         {
             var item = new BlogDto { BlogId = id };
