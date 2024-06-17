@@ -21,7 +21,6 @@ namespace SLNDotNetCore.Winform.forms
             _dapperservice = new DapperService(ConnectionStrings.ConnectoinStrings._constringbuilder.ConnectionString);
         }
 
-
         private void frm_BlogList_Load(object sender, EventArgs e)
         {
             List<BlogModel> lst = _dapperservice.Query<BlogModel>(Queries.Queries.readQuery);
@@ -46,7 +45,16 @@ namespace SLNDotNetCore.Winform.forms
                 blogId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["colid"].Value);
                 frm_Blog blog = new frm_Blog(blogId);
                 blog.ShowDialog();
-                
+                frm_BlogList_Load(sender, EventArgs.Empty);
+
+                int rowIndex = e.RowIndex;
+                if (rowIndex >= 0 && rowIndex < dataGridView1.Rows.Count)
+                {
+                    dataGridView1.ClearSelection();
+                    dataGridView1.Rows[rowIndex].Selected = true;
+                    dataGridView1.FirstDisplayedScrollingRowIndex = rowIndex;
+                }
+
             }
             else if(e.ColumnIndex ==(int)EnumControlType.Delete)
             {
@@ -56,6 +64,6 @@ namespace SLNDotNetCore.Winform.forms
                 int blogId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["colid"].Value);
                 DeleteBlog(blogId);
             }
-        }
+        }       
     }
 }
