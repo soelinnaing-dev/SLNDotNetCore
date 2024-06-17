@@ -30,7 +30,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SLNDotNetCore.RefitExample"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SLNDotNetCore.Winform", "..\SLNDotNetCore.Winform\SLNDotNetCore.Winform.csproj", "{99189D3F-C83A-4A00-BE57-48D0ACEB13BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLNDotNetCore.WinformSql_Injuection", "..\SLNDotNetCore.WinformSql_Injuection\SLNDotNetCore.WinformSql_Injuection.csproj", "{FA9ABF59-3050-44A6-860A-66414199B75A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SLNDotNetCore.WinformSql_Injuection", "..\SLNDotNetCore.WinformSql_Injuection\SLNDotNetCore.WinformSql_Injuection.csproj", "{FA9ABF59-3050-44A6-860A-66414199B75A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLNDotNetCore.NLayer.UI", "..\SLNDotNetCore.NLayer.UI\SLNDotNetCore.NLayer.UI.csproj", "{CF5F8858-0417-4DA4-9593-3EE5E87D7C11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLNDotNetCore.NLayer.BusinessLogic", "..\SLNDotNetCore.NLayer.BusinessLogic\SLNDotNetCore.NLayer.BusinessLogic.csproj", "{BB5BE2BF-ABF3-404B-B8D9-B4B7DDF5806D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SLNDotNetCore.NLayer.DataAccess", "..\SLNDotNetCore.NLayer.DataAccess\SLNDotNetCore.NLayer.DataAccess.csproj", "{5C8374A7-D035-4D1E-B068-933773CDBDD8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -86,6 +92,18 @@ Global
 		{FA9ABF59-3050-44A6-860A-66414199B75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA9ABF59-3050-44A6-860A-66414199B75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA9ABF59-3050-44A6-860A-66414199B75A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF5F8858-0417-4DA4-9593-3EE5E87D7C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF5F8858-0417-4DA4-9593-3EE5E87D7C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF5F8858-0417-4DA4-9593-3EE5E87D7C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF5F8858-0417-4DA4-9593-3EE5E87D7C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB5BE2BF-ABF3-404B-B8D9-B4B7DDF5806D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB5BE2BF-ABF3-404B-B8D9-B4B7DDF5806D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB5BE2BF-ABF3-404B-B8D9-B4B7DDF5806D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB5BE2BF-ABF3-404B-B8D9-B4B7DDF5806D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C8374A7-D035-4D1E-B068-933773CDBDD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C8374A7-D035-4D1E-B068-933773CDBDD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C8374A7-D035-4D1E-B068-933773CDBDD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C8374A7-D035-4D1E-B068-933773CDBDD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
