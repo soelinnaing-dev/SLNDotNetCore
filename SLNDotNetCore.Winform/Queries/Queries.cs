@@ -22,5 +22,12 @@ namespace SLNDotNetCore.Winform.Queries
       ,[BlogAuthor]
       ,[BlogContent]
   FROM [DotNetCore].[dbo].[Tbl_Blog]";
+
+        internal static string updateQuery { get; } = @"
+        UPDATE [dbo].[Tbl_Blog]
+        SET [BlogTitle] = @BlogTitle,
+            [BlogAuthor] = @BlogAuthor,
+            [BlogContent] = @BlogContent
+        WHERE BlogId = @BlogId";
     }
 }

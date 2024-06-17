@@ -38,15 +38,19 @@ namespace SLNDotNetCore.Winform.forms
             frm_BlogList_Load(this,EventArgs.Empty);
         }
 
+        private int blogId;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.ColumnIndex ==(int)EnumControlType.Edit)
             {
-
+                blogId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["colid"].Value);
+                frm_Blog blog = new frm_Blog(blogId);
+                blog.ShowDialog();
+                
             }
             else if(e.ColumnIndex ==(int)EnumControlType.Delete)
             {
-                var dialogResult = MessageBox.Show("Are you sure want to delet?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
+                var dialogResult = MessageBox.Show("Are you sure want to delete?","Confirmation",MessageBoxButtons.YesNo,MessageBoxIcon.Question);
                 if(dialogResult != DialogResult.Yes)return;
 
                 int blogId = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["colid"].Value);
